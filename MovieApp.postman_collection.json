@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "24189edb-606b-44e1-93f9-c492c4207f35",
+		"name": "MovieApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"admin2\",\n  \"firstName\": \"admin\",\n  \"lastName\": \"A\",\n  \"email\": \"admin2@gmail.com\",\n  \"contactNumber\": 1234567890,\n  \"roles\": [\n    \"admin\"\n  ],\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user1\",\n  \"firstName\": \"user\",\n  \"lastName\": \"A\",\n  \"email\": \"user1@gmail.com\",\n  \"contactNumber\": 1234567890,\n  \"roles\": [\n    \"user\"\n  ],\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user1\",\n  \"password\": \"password1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"admin2\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateMovietickets admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"get_id\": {\n    \"timestamp\": 1685091988,\n    \"date\": \"2023-05-27T06:37:26.596Z\"\n  },\n  \"movieName\": \"Pathaan\",\n  \"theatreName\": \"Inox\",\n  \"noOfTicketsAvailable\": 25,\n  \"ticketsStatus\": \"available\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/Pathaan/update/available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"Pathaan",
+						"update",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"admin1\",\n  \"password\": \"password1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/admin1/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"admin1",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user1\",\n  \"password\": \"password1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/user1/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"user1",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Ticket user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"get_id\": {\n    \"timestamp\": 1685091988,\n    \"date\": \"2023-05-27T06:37:26.596Z\"\n  },\n  \"loginId\": \"user1\",\n  \"movieName\": \"Pathaan\",\n  \"theatreName\": \"Natraj\",\n  \"noOfTickets\": 1,\n  \"seatNumber\": [\n    \"d1\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/Pathaan/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"Pathaan",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movie",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/movies/search/Pathaan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"movies",
+						"search",
+						"Pathaan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBookedTickets admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/getallbookedtickets/Avatar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"getallbookedtickets",
+						"Avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search all Movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Movie",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9093/api/v1.0/moviebooking/Pathaan/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"Pathaan",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
